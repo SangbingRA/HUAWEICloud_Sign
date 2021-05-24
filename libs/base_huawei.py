@@ -855,7 +855,7 @@ class BaseHuaWei(BaseClient):
         await self.page.waitForSelector('#fastpostsubmit')
         await asyncio.sleep(1)
         await self.page.click('#tabeditor-2')
-        for i in range(1,10):
+        for i in range(1,5):
             content = random.choice(
                 [
                         '1.物联网“IoT” 的英文全称是（Internet of Things）。',
