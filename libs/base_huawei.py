@@ -758,38 +758,38 @@ class BaseHuaWei(BaseClient):
         await asyncio.sleep(1)
 
     async def sign_post(self):
-        tid_list = [87703, 87513, 87948, 87424, 87445, 87587, 87972, 87972]
-        n = random.randint(1, 2)
-        for i in range(n):
-            tid = random.choice(tid_list)
-            await self.page.goto(f'https://bbs.huaweicloud.com/forum/thread-{tid}-1-1.html', {'waitUntil': 'load'})
-            await self.page.waitForSelector('#fastpostsubmit')
-            content = random.choice(
-                ['666', '回帖送码豆', '论坛回帖送码豆喽'])
-            await self.page.evaluate(
-                '''() =>{ ue.setContent('<p>%s</p>'); }''' % content)
-            await asyncio.sleep(1)
-            await self.page.click('#fastpostsubmit')
-            await asyncio.sleep(5)
+#         tid_list = [87703, 87513, 87948, 87424, 87445, 87587, 87972, 87972]
+#         n = random.randint(1, 2)
+#         for i in range(n):
+#             tid = random.choice(tid_list)
+#             await self.page.goto(f'https://bbs.huaweicloud.com/forum/thread-{tid}-1-1.html', {'waitUntil': 'load'})
+#             await self.page.waitForSelector('#fastpostsubmit')
+#             content = random.choice(
+#                 ['666', '回帖送码豆', '论坛回帖送码豆喽'])
+#             await self.page.evaluate(
+#                 '''() =>{ ue.setContent('<p>%s</p>'); }''' % content)
+#             await asyncio.sleep(1)
+#             await self.page.click('#fastpostsubmit')
+#             await asyncio.sleep(5)
 
     async def post_reply(self):
-        await self.page.goto('https://bbs.huaweicloud.com/forum/thread-89722-1-1.html', {'waitUntil': 'load'})
-        await self.page.waitForSelector('#fastpostsubmit')
-        content = '#2020年终盛典# 我很期待这次盛典，祝盛典圆满成功！顺利召开！'
-        await self.page.evaluate(
-            '''() =>{ ue.setContent('<p>%s</p>'); }''' % content)
-        await asyncio.sleep(1)
-        await self.page.click('#fastpostsubmit')
-        await asyncio.sleep(10)
+#         await self.page.goto('https://bbs.huaweicloud.com/forum/thread-89722-1-1.html', {'waitUntil': 'load'})
+#         await self.page.waitForSelector('#fastpostsubmit')
+#         content = '#2020年终盛典# 我很期待这次盛典，祝盛典圆满成功！顺利召开！'
+#         await self.page.evaluate(
+#             '''() =>{ ue.setContent('<p>%s</p>'); }''' % content)
+#         await asyncio.sleep(1)
+#         await self.page.click('#fastpostsubmit')
+#         await asyncio.sleep(10)
 
-        await self.page.goto('https://bbs.huaweicloud.com/forum/thread-89742-1-1.html', {'waitUntil': 'load'})
-        await self.page.waitForSelector('#fastpostsubmit')
-        content = ' #我和华为云的这一年#这一年是我和华为云相识的第一年，知道了华为云有很多课程，大拿讲课，受益颇丰。'
-        await self.page.evaluate(
-            '''() =>{ ue.setContent('<p>%s</p>'); }''' % content)
-        await asyncio.sleep(1)
-        await self.page.click('#fastpostsubmit')
-        await asyncio.sleep(5)
+#         await self.page.goto('https://bbs.huaweicloud.com/forum/thread-89742-1-1.html', {'waitUntil': 'load'})
+#         await self.page.waitForSelector('#fastpostsubmit')
+#         content = ' #我和华为云的这一年#这一年是我和华为云相识的第一年，知道了华为云有很多课程，大拿讲课，受益颇丰。'
+#         await self.page.evaluate(
+#             '''() =>{ ue.setContent('<p>%s</p>'); }''' % content)
+#         await asyncio.sleep(1)
+#         await self.page.click('#fastpostsubmit')
+#         await asyncio.sleep(5)
 
         # await self.page.goto('https://bbs.huaweicloud.com/forum/thread-80376-1-1.html', {'waitUntil': 'load'})
         # await self.page.waitForSelector('#fastpostsubmit')
@@ -813,26 +813,26 @@ class BaseHuaWei(BaseClient):
 
     # HDC flag 读书签到 3月23日-4月20日，累计29天
     async def hdc_read(self):
-        await self.page.goto(os.environ.get('FLAGURL'), {'waitUntil': 'load'})
-        await self.page.waitForSelector('#fastpostsubmit')
-        await asyncio.sleep(1)
-        await self.page.click('#tabeditor-2')
-        content = random.choice(
-                [
-                    '每天坚持打卡', 
-                    '实现flag，打卡mark', 
-                    '坚持继续打卡~~', 
-                    '打卡++1', 
-                    'flag达成', 
-                    '记录一下', 
-                    'mark今天的打卡', 
-                    '打卡，坚持不停',
-                    '继续打卡'
-                ])
-        await self.page.type('.textarea', content, {'delay': 30})
-        await asyncio.sleep(1)
-        await self.page.click('#fastpostsubmit')
-        await asyncio.sleep(30)
+#         await self.page.goto(os.environ.get('FLAGURL'), {'waitUntil': 'load'})
+#         await self.page.waitForSelector('#fastpostsubmit')
+#         await asyncio.sleep(1)
+#         await self.page.click('#tabeditor-2')
+#         content = random.choice(
+#                 [
+#                     '每天坚持打卡', 
+#                     '实现flag，打卡mark', 
+#                     '坚持继续打卡~~', 
+#                     '打卡++1', 
+#                     'flag达成', 
+#                     '记录一下', 
+#                     'mark今天的打卡', 
+#                     '打卡，坚持不停',
+#                     '继续打卡'
+#                 ])
+#         await self.page.type('.textarea', content, {'delay': 30})
+#         await asyncio.sleep(1)
+#         await self.page.click('#fastpostsubmit')
+#         await asyncio.sleep(30)
     
     # 【DevRun华为云开发者沙龙】听说牛羊也有自己的“健康码”？观看直播专家为你解答，还能参与盖楼活动，每周好礼等你拿！5月20日、5月27日、6月3日
     async def hdc_floor(self):
