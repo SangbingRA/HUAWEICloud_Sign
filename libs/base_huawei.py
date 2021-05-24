@@ -813,26 +813,26 @@ class BaseHuaWei(BaseClient):
 
     # HDC flag 读书签到 3月23日-4月20日，累计29天
     async def hdc_read(self):
-#         await self.page.goto(os.environ.get('FLAGURL'), {'waitUntil': 'load'})
-#         await self.page.waitForSelector('#fastpostsubmit')
-#         await asyncio.sleep(1)
-#         await self.page.click('#tabeditor-2')
-#         content = random.choice(
-#                 [
-#                     '每天坚持打卡', 
-#                     '实现flag，打卡mark', 
-#                     '坚持继续打卡~~', 
-#                     '打卡++1', 
-#                     'flag达成', 
-#                     '记录一下', 
-#                     'mark今天的打卡', 
-#                     '打卡，坚持不停',
-#                     '继续打卡'
-#                 ])
-#         await self.page.type('.textarea', content, {'delay': 30})
-#         await asyncio.sleep(1)
-#         await self.page.click('#fastpostsubmit')
-#         await asyncio.sleep(30)
+        await self.page.goto(os.environ.get('FLAGURL'), {'waitUntil': 'load'})
+        await self.page.waitForSelector('#fastpostsubmit')
+        await asyncio.sleep(1)
+        await self.page.click('#tabeditor-2')
+        content = random.choice(
+                [
+                    '每天坚持打卡', 
+                    '实现flag，打卡mark', 
+                    '坚持继续打卡~~', 
+                    '打卡++1', 
+                    'flag达成', 
+                    '记录一下', 
+                    'mark今天的打卡', 
+                    '打卡，坚持不停',
+                    '继续打卡'
+                ])
+        await self.page.type('.textarea', content, {'delay': 30})
+        await asyncio.sleep(1)
+        await self.page.click('#fastpostsubmit')
+        await asyncio.sleep(30)
     
     # 【DevRun华为云开发者沙龙】听说牛羊也有自己的“健康码”？观看直播专家为你解答，还能参与盖楼活动，每周好礼等你拿！5月20日、5月27日、6月3日
     async def hdc_floor(self):
@@ -841,11 +841,11 @@ class BaseHuaWei(BaseClient):
         await asyncio.sleep(1)
         await self.page.click('#tabeditor-2')
         content = random.choice(
-                [
+            [
                     '华为云IoT设备接入服务，构筑稳定的畜牧监管业务', 
                     '借助IoT数据分析，加速畜牧数据的价值变现', 
                     '华为云全球SIM联接让畜牧传感设备联接更简单、智能'
-                ])
+            ])
         await self.page.type('.textarea', content, {'delay': 30})
         await asyncio.sleep(1)
         await self.page.click('#fastpostsubmit')
