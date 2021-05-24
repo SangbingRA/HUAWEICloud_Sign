@@ -850,3 +850,30 @@ class BaseHuaWei(BaseClient):
         await asyncio.sleep(1)
         await self.page.click('#fastpostsubmit')
         await asyncio.sleep(30)
+        
+        await self.page.goto('https://bbs.huaweicloud.com/forum/thread-126731-1-1.html', {'waitUntil': 'load'})
+        await self.page.waitForSelector('#fastpostsubmit')
+        await asyncio.sleep(1)
+        await self.page.click('#tabeditor-2')
+        content = random.choice(
+            [
+                    '1.物联网“IoT” 的英文全称是（Internet of Things）。',
+                    '2.在（华为云学院）可以获取华为云各领域的免费课程。',
+                    '3.华为物联网职业认证目前有两个级别，分别是（HCIA）和（HCIP）。',
+                    '4.发表（5）篇原创优质博客，可以申请成为云享专家。',
+                    '5.目前华为云IoT的云享专家发布合格博客，每篇可获得（150）码豆。',
+                    '6.活动码豆可以在（码豆会员中心）兑换华为云周边、电子产品等实物奖品。',
+                    '7.华为云IoT的设备接入平台IoTDA每月提供（100万）条免费消息数。',
+                    '8.在华为云IoT论坛发布技术求助帖，工作日期间一般（2）小时内会有专家解答。',
+                    '9.（IoT边缘(IoT Edge)）是边缘计算在物联网行业的应用，它在靠近物或数据源头的边缘侧，融合网络、计算、存储、应用核心能力的开放平台，就近提供计算和智能服务，满足行业在实时业务、应用智能、安全与隐私保护等方面的基本需求。',
+                    '10.（设备接入服务(IoTDA)）是华为云的物联网平台，提供海量设备连接上云、设备和云端双向消息通信、批量设备管理、远程控制和监控、OTA升级、设备联动规则等能力，并可将设备数据灵活流转到华为云其他服务，帮助物联网行业用户快速完成设备联网及行业应用集成。',
+                    '11.（设备发放服务(IoT Device Provisioning)）可以帮助您可以轻松管理跨多区域海量设备的发放工作，实现单点发放管理，设备全球上线的业务目的。',
+                    '12.（全球SIM联接(Global SIM Link)）提供无线蜂窝物联网流量和eSIM/vSIM按需选网，享受当地资费，为客户提供一点接入、全球可达的一站式流量管理服务。',
+                    '13.（华为云IoT数据分析服务）基于物联网资产模型，整合IoT数据集成、清洗、存储、分析、可视化，为IoT数据开发者提供一站式服务，降低开发门槛，缩短开发周期，快速实现IoT数据价值变现。',
+                    '14.（Huawei LiteOS）是华为针对物联网领域推出的轻量级物联网操作系统。',
+                    '15.（华为云IoT）是买家、卖家、系统集成商的桥梁和纽带，助力设备和应用集成，使能行业应用服务，实现物联网应用的低成本复制。',
+            ])
+        await self.page.type('.textarea', content, {'delay': 30})
+        await asyncio.sleep(1)
+        await self.page.click('#fastpostsubmit')
+        await asyncio.sleep(30)
